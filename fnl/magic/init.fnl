@@ -57,13 +57,14 @@
   :hrsh7th/nvim-cmp {:mod :cmp}
   :jiangmiao/auto-pairs {:mod :auto-pairs}
   :lewis6991/impatient.nvim {}
-  :liuchengxu/vim-better-default {:mod :better-default}
   :marko-cerovac/material.nvim {:mod :material}
   :mbbill/undotree {:mod :undotree}
   :neovim/nvim-lspconfig {:mod :lspconfig}
   :nvim-lualine/lualine.nvim {:mod :lualine}
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
   :radenling/vim-dispatch-neovim {}
+  :stephencottontail/nvim-colors {}
+  :stephencottontail/vim-colors {}
   :tpope/vim-abolish {}
   :tpope/vim-commentary {}
   :tpope/vim-dispatch {}
