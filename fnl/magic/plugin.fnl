@@ -1,5 +1,6 @@
 (module magic.plugin
   {autoload {a aniseed.core
+             nvim aniseed.nvim
              lazy lazy}})
 
 (defn- safe-require-plugin-config [name]
@@ -24,13 +25,11 @@
 
   This is just a helper / syntax sugar function to make interacting with
   lazy.nvim a little more concise."
-  (let [pkgs [...]]
-    (lazy.setup
-      (fn [use]
-        (for [i 1 (a.count pkgs) 2]
-          (let [name (. pkgs i)
-                opts (. pkgs (+ i 1))]
-            (-?> (. opts :mod) (safe-require-plugin-config))
-            (use (a.assoc opts 1 name)))))))
-
-  nil)
+  (let [args [...]
+        plugins {}]
+    (for [i 1 (a.count args) 2]
+      (let [name (. args i)
+            opts (. args (+ i 1))]
+        (-?> (. opts :mod) (safe-require-plugin-config))
+        (table.insert plugins (a.assoc opts 1 name))))
+    (lazy.setup plugins {:root (.. (nvim.fn.stdpath "config") "/lazy") :defaults {:lazy true}})))
