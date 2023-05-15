@@ -39,6 +39,6 @@
 ;; Run script/sync.sh to update, install and clean your plugins.
 (plugin.use
   :Olical/aniseed {:lazy false}
-  :Olical/conjure {}
+  :Olical/conjure {:ft ["clojure" "fennel"]}
   )
 
