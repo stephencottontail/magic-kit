@@ -32,4 +32,6 @@
             opts (. args (+ i 1))]
         (-?> (. opts :mod) (safe-require-plugin-config))
         (table.insert plugins (a.assoc opts 1 name))))
-    (lazy.setup plugins {:root (.. (nvim.fn.stdpath "config") "/lazy") :defaults {:lazy true}})))
+    (lazy.setup plugins {:root (.. (nvim.fn.stdpath "config") "/lazy")
+                         :defaults {:lazy true}
+                         :ui {:icons {:lazy "⏾ "}}})))
