@@ -37,45 +37,8 @@
 ;;; Plugins
 
 ;; Run script/sync.sh to update, install and clean your plugins.
-;; Packer configuration format: https://github.com/wbthomason/packer.nvim
 (plugin.use
-  :Olical/aniseed {}
-  :Olical/conjure {}
-  :Olical/nvim-local-fennel {}
-  :PaterJason/cmp-conjure {}
-  :PeterRincker/vim-argumentative {}
-  :airblade/vim-gitgutter {}
-  :clojure-vim/clojure.vim {}
-  :clojure-vim/vim-jack-in {}
-  :folke/which-key.nvim {:mod :which-key}
-  :ggandor/lightspeed.nvim {}
-  :guns/vim-sexp {:mod :sexp}
-  :hrsh7th/cmp-buffer {}
-  :hrsh7th/cmp-cmdline {}
-  :hrsh7th/cmp-nvim-lsp {}
-  :hrsh7th/cmp-path {}
-  :hrsh7th/nvim-cmp {:mod :cmp}
-  :jiangmiao/auto-pairs {:mod :auto-pairs}
-  :lewis6991/impatient.nvim {}
-  :marko-cerovac/material.nvim {:mod :material}
-  :mbbill/undotree {:mod :undotree}
-  :neovim/nvim-lspconfig {:mod :lspconfig}
-  :nvim-lualine/lualine.nvim {:mod :lualine}
-  :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-lua/popup.nvim] [:nvim-lua/plenary.nvim]]}
-  :radenling/vim-dispatch-neovim {}
-  :stephencottontail/nvim-colors {}
-  :stephencottontail/vim-colors {}
-  :tpope/vim-abolish {}
-  :tpope/vim-commentary {}
-  :tpope/vim-dispatch {}
-  :tpope/vim-eunuch {}
-  :tpope/vim-fugitive {}
-  :tpope/vim-repeat {}
-  :tpope/vim-sexp-mappings-for-regular-people {}
-  :tpope/vim-sleuth {}
-  :tpope/vim-surround {}
-  :tpope/vim-unimpaired {}
-  :tpope/vim-vinegar {}
-  :w0rp/ale {:mod :ale}
-  :wbthomason/packer.nvim {}
+  :Olical/aniseed {:lazy false}
+  :Olical/conjure {:ft ["clojure" "fennel"]}
   )
+
