@@ -38,6 +38,7 @@
 
 ;; Run script/sync.sh to update, install and clean your plugins.
 (plugin.use
+  :MaxMEllon/vim-jsx-pretty {:ft ["javascriptreact" "typescriptreact"]}
   :Olical/aniseed {:lazy false}
   :Olical/conjure {:ft ["clojure" "fennel"]}
   )
