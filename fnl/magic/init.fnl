@@ -41,5 +41,7 @@
   :MaxMEllon/vim-jsx-pretty {:ft ["javascriptreact" "typescriptreact"]}
   :Olical/aniseed {:lazy false}
   :Olical/conjure {:ft ["clojure" "fennel"]}
+  :stephencottontail/nvim-colors {:lazy false
+                                  :config (nvim.ex.colorscheme "catppuccin")}
   )
 
