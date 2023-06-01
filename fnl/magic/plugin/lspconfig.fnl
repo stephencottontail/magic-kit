@@ -9,6 +9,8 @@
   (when ok?
     (lsp.clojure_lsp.setup {})
     (lsp.tsserver.setup {})
+    (lsp.pylsp.setup {})
+    (lsp.bashls.setup {})
     (lsp.lua_ls.setup
       {:cmd ["lua-language-server"]
        :settings {:Lua {:telemetry {:enable false}}}})
@@ -24,4 +26,4 @@
     (map :<c-n> "lua vim.diagnostic.goto_next()")
 
     (map :<leader>lr "lua vim.lsp.buf.rename()")
-    (map :<leader>lf "lua vim.lsp.buf.formatting({async = true})")))
+    (map :<leader>lf "lua vim.lsp.buf.format({async = true})")))
