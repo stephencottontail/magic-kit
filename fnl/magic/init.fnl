@@ -42,6 +42,7 @@
   :Olical/aniseed {:lazy false}
   :Olical/conjure {:ft ["clojure" "fennel"]}
   :stephencottontail/nvim-colors {:lazy false
-                                  :config (nvim.ex.colorscheme "catppuccin")}
+                                  :url "git@github.com:stephencottontail/nvim-colors.git"
+                                  :config (fn [] (nvim.ex.colorscheme :tokyonight))}
   )
 
