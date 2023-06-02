@@ -41,6 +41,11 @@
   :MaxMEllon/vim-jsx-pretty {:ft ["javascriptreact" "typescriptreact"]}
   :Olical/aniseed {:lazy false}
   :Olical/conjure {:ft ["clojure" "fennel"]}
+  :neovim/nvim-lspconfig {:ft [:javascriptreact :typescriptreact]
+                          :config (fn []
+                                    (let [lsp (require :lspconfig)]
+                                      (lsp.tsserver.setup {})
+                                      (nvim.set_keymap :n :gh ":lua vim.lsp.buf.hover()<cr>" {})))}
   :stephencottontail/nvim-colors {:lazy false
                                   :url "git@github.com:stephencottontail/nvim-colors.git"
                                   :config (fn [] (nvim.ex.colorscheme :tokyonight))}
