@@ -43,11 +43,23 @@
   :Olical/conjure {:ft ["clojure" "fennel"]}
   :neovim/nvim-lspconfig {:ft [:javascriptreact :typescriptreact]
                           :config (fn []
-                                    (let [lsp (require :lspconfig)]
+                                    (let [lsp (require :lspconfig)
+                                          signs {:Error :
+                                                 :Warn :
+                                                 :Hint :
+                                                 :Info :}]
                                       (lsp.tsserver.setup {})
                                       (nvim.set_keymap :n :gh ":lua vim.lsp.buf.hover()<cr>" {})
                                       (nvim.set_keymap :n :gd ":lua vim.lsp.buf.definition()<cr>" {})
-                                      (nvim.set_keymap :n :gD ":lua vim.lsp.buf.declaration()<cr>" {})))}
+                                      (nvim.set_keymap :n :gD ":lua vim.lsp.buf.declaration()<cr>" {})
+
+                                      (each [key val (pairs signs)]
+                                        (vim.fn.sign_define
+                                          (.. :DiagnosticSign key)
+                                          {:text val
+                                           :texthl (.. :DiagnosticSign key)
+                                           :numhl (.. :DiagnosticSign key)}))
+                                      ))}
   :stephencottontail/nvim-colors {:lazy false
                                   :url "git@github.com:stephencottontail/nvim-colors.git"
                                   :config (fn [] (nvim.ex.colorscheme :tokyonight))}
