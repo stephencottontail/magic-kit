@@ -21,8 +21,11 @@
 (set nvim.o.mouse "a")
 (set nvim.o.updatetime 500)
 (set nvim.o.timeoutlen 500)
-(set nvim.o.sessionoptions "blank,curdir,folds,help,tabpages,winsize")
+(set nvim.o.sessionoptions "blank,curdir,folds,help,tabpages,winsize,terminal")
 (set nvim.o.inccommand :split)
+(set nvim.o.tabstop 4)
+(set nvim.o.shiftwidth 4)
+(set nvim.o.expandtab false)
 
 (nvim.ex.set :spell)
 (nvim.ex.set :list)
