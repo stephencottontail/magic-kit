@@ -1,5 +1,6 @@
 (module magic.init
   {autoload {plugin magic.plugin
+             treesitter magic.plugin.treesitter
              nvim aniseed.nvim}})
 
 ;;; Introduction
@@ -44,6 +45,8 @@
   :MaxMEllon/vim-jsx-pretty {:ft ["javascriptreact" "typescriptreact"]}
   :Olical/aniseed {:lazy false}
   :Olical/conjure {:ft ["clojure" "fennel"]}
+  :nvim-treesitter/nvim-treesitter {:lazy false
+                                    :config treesitter.treesitter}
   :stephencottontail/nvim-colors {:lazy false
                                   :url "git@github.com:stephencottontail/nvim-colors.git"
                                   :config (fn [] (nvim.ex.colorscheme :tokyonight))}
