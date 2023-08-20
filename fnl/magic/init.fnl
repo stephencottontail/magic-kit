@@ -1,6 +1,7 @@
 (module magic.init
   {autoload {plugin magic.plugin
              lsp magic.plugin.lsp
+             treesitter magic.plugin.treesitter
              nvim aniseed.nvim}})
 
 ;;; Introduction
@@ -51,6 +52,8 @@
                                :javascriptreact
                                :typescriptreact]
                           :config lsp.lsp}
+  :nvim-treesitter/nvim-treesitter {:lazy false
+                                    :config treesitter.treesitter}
   :stephencottontail/nvim-colors {:lazy false
                                   :url "git@github.com:stephencottontail/nvim-colors.git"
                                   :config (fn [] (nvim.ex.colorscheme :tokyonight))}
