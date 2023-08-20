@@ -1,5 +1,6 @@
 (module magic.init
   {autoload {plugin magic.plugin
+             lsp magic.plugin.lsp
              nvim aniseed.nvim}})
 
 ;;; Introduction
@@ -41,9 +42,15 @@
 
 ;; Run script/sync.sh to update, install and clean your plugins.
 (plugin.use
-  :MaxMEllon/vim-jsx-pretty {:ft ["javascriptreact" "typescriptreact"]}
+  :MaxMEllon/vim-jsx-pretty {:ft [:javascriptreact
+                                  :typescriptreact]}
   :Olical/aniseed {:lazy false}
   :Olical/conjure {:ft ["clojure" "fennel"]}
+  :neovim/nvim-lspconfig {:ft [:javascript
+                               :typescript
+                               :javascriptreact
+                               :typescriptreact]
+                          :config lsp.lsp}
   :stephencottontail/nvim-colors {:lazy false
                                   :url "git@github.com:stephencottontail/nvim-colors.git"
                                   :config (fn [] (nvim.ex.colorscheme :tokyonight))}
