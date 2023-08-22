@@ -46,13 +46,19 @@
   :MaxMEllon/vim-jsx-pretty {:ft [:javascriptreact
                                   :typescriptreact]}
   :Olical/aniseed {:lazy false}
-  :Olical/conjure {:ft ["clojure" "fennel"]}
+  :Olical/conjure {:ft [:clojure
+                        :fennel]}
   :neovim/nvim-lspconfig {:ft [:javascript
                                :typescript
                                :javascriptreact
                                :typescriptreact]
                           :config lsp.lsp}
-  :nvim-treesitter/nvim-treesitter {:lazy false
+  :nikvdp/neomux {:lazy false
+                  :config (fn [] (set nvim.o.statusline (.. nvim.o.statusline " %t %m")))}
+  :nvim-treesitter/nvim-treesitter {:ft [:javascript
+                                         :typescript
+                                         :javascriptreact
+                                         :typescriptreact]
                                     :config treesitter.treesitter}
   :stephencottontail/nvim-colors {:lazy false
                                   :url "git@github.com:stephencottontail/nvim-colors.git"
